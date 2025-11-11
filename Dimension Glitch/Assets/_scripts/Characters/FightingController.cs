@@ -16,6 +16,7 @@ public class FightingController : MonoBehaviour
     private Transform cameraTransform;
     private Animator anim;
     private PlayerInput playerInput;
+    private Input actionInput;
 
     private void Awake()
     {
@@ -40,21 +41,20 @@ public class FightingController : MonoBehaviour
         GetInput();
         MoveCharacter();
 
-        Debug.Log(moveInput.x);
-        Debug.Log(moveInput.y);
-        
-
     }
 
     // Método llamado automáticamente por el Input System
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+         
     }
 
     public void GetInput()
     {
         moveInput = playerInput.actions["Movimiento"].ReadValue<Vector2>();
+        
+       
     }
 
     private void MoveCharacter()
@@ -79,7 +79,7 @@ public class FightingController : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(move);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            
+
 
         }
 
@@ -87,7 +87,7 @@ public class FightingController : MonoBehaviour
 
     }
 
-  
+
 
 
 }
