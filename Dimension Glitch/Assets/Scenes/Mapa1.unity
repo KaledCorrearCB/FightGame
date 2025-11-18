@@ -4061,8 +4061,8 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f60fc997-4403-4709-aa40-b1f39c6a1fda
     m_ActionName: Player/Ataques[/Keyboard/j]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -4120,6 +4120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49271e11493e2ce45b377debea36ec6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 5866666020230651732}
+  atacando: 0
   text: Paww
 --- !u!1 &5882731159527293578
 GameObject:
@@ -5346,6 +5348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49271e11493e2ce45b377debea36ec6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  atacando: 0
   text: 
 --- !u!114 &7975772690049575661
 MonoBehaviour:
