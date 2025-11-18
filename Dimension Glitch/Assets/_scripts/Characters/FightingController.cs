@@ -82,8 +82,8 @@ public class FightingController : MonoBehaviour
 
 
         }
-
-        anim.SetBool("Walking", move.magnitude > 0.1f);
+        anim.SetFloat("Blend", moveInput.magnitude, smoothBlend, Time.deltaTime);
+       // anim.SetBool("Walking", move.magnitude > 0.1f);
 
     }
 
