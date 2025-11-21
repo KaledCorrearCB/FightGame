@@ -4111,6 +4111,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f60fc997-4403-4709-aa40-b1f39c6a1fda
     m_ActionName: Player/Ataques[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5866666020230651738}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Block
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a435ad6c-4fea-4687-bae3-7ed797cb7560
+    m_ActionName: Player/Bloquear[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player

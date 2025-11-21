@@ -37,6 +37,18 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public void Block(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            anim.SetBool("isBlocking",true);
+            Debug.Log("defendiendo");
+        }
 
+        if (context.canceled)
+        {
+            anim.SetBool("isBlocking", false);
+        }
 
+    }
 }
