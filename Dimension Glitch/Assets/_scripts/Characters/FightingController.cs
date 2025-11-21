@@ -17,11 +17,23 @@ public class FightingController : MonoBehaviour
     private Animator anim;
     private PlayerInput playerInput;
     private Input actionInput;
+    // Hacemos que sea un singleton para poder llamarlo desde otro lugar
+    public static FightingController instance;
+    public bool golpeado;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+
         controller = GetComponent<CharacterController>();
         cameraTransform = Camera.main.transform;
+
+
+
     }
 
     private void OnEnable()
@@ -33,6 +45,7 @@ public class FightingController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
+        golpeado = false;
 
     }
 
@@ -87,7 +100,13 @@ public class FightingController : MonoBehaviour
 
     }
 
+    public void MeGolpearon()
+    {
 
+        golpeado = true;
+
+
+    }
 
 
 }
