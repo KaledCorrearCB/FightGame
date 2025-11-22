@@ -11,7 +11,7 @@ public class FightingController : MonoBehaviour
 
 
     public float smoothBlend = 0.1f;
-    private CharacterController controller;
+    public CharacterController controller;
     private Vector2 moveInput;
     private Transform cameraTransform;
     private Animator anim;
