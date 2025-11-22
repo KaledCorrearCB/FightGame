@@ -4127,6 +4127,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a435ad6c-4fea-4687-bae3-7ed797cb7560
     m_ActionName: Player/Bloquear[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5866666020230651738}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DogeFront
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61f661ad-c7d0-4600-a956-663e6a587a49
+    m_ActionName: Player/Esquivar
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -4174,6 +4190,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotationSpeed: 10
   smoothBlend: 0.1
+  golpeado: 0
 --- !u!114 &5866666020230651738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4190,6 +4207,7 @@ MonoBehaviour:
   atacando: 0
   text: Paww
   damage: 0
+  distanceDoge: 2
 --- !u!1 &5882731159527293578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5419,6 +5437,7 @@ MonoBehaviour:
   atacando: 0
   text: 
   damage: 0
+  distanceDoge: 2
 --- !u!114 &7975772690049575661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5434,6 +5453,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotationSpeed: 10
   smoothBlend: 0.1
+  golpeado: 0
 --- !u!143 &7975772690049575662
 CharacterController:
   m_ObjectHideFlags: 0

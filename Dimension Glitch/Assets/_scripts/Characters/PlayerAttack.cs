@@ -9,8 +9,9 @@ public class PlayerAttack : MonoBehaviour
     public bool atacando = false;
     public static PlayerAttack instance;
     public string text;
-    public int damage = 0;  
-
+    public int damage = 0;
+    public float distanceDoge = 2f;
+    
     private void Awake()
     {
         if(instance == null)
@@ -22,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     public void Start()
     {
         anim = GetComponent<Animator>();
+        
     }
     public void Update()
     {
@@ -49,6 +51,18 @@ public class PlayerAttack : MonoBehaviour
         {
             anim.SetBool("isBlocking", false);
         }
+
+    }
+
+    public void DogeFront(InputAction.CallbackContext context)
+    {
+
+        if (context.started)
+        {
+            anim.SetTrigger("Doge");
+
+        }
+
 
     }
 }
