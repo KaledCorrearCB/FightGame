@@ -200,10 +200,10 @@
                 {
                     "name": "",
                     "id": "555535b6-e92a-4631-94dd-2fcc96485dd7",
-                    "path": "",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Bloquear",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -244,10 +244,10 @@
                 {
                     "name": "",
                     "id": "b1bdd9f3-6fdb-4a70-933d-9821b33b7ee2",
-                    "path": "",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Esquivar",
                     "isComposite": false,
                     "isPartOfComposite": false
