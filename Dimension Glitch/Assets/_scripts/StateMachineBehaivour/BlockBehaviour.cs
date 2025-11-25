@@ -16,6 +16,8 @@ public class BlockBehaviour : StateMachineBehaviour
         if(FightingController.instance.golpeado)
         {
             animator.SetTrigger("Blocking");
+            FightingController.instance.moveSpeed = 0;
+            PlayerAttack.instance.BlockEfect();
         }
 
 
