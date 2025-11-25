@@ -20,6 +20,7 @@ public class Transicion2 : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         PlayerAttack.instance.atacando = false;
+        FightingController.instance.moveSpeed = 0;
 
     }
 

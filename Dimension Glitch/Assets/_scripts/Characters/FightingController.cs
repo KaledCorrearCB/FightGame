@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class FightingController : MonoBehaviour
 {
     [Header("Movimiento")]
-    [SerializeField] private float moveSpeed = 5f;   // Velocidad de desplazamiento
+    public float moveSpeed = 5f;   // Velocidad de desplazamiento
     [SerializeField] private float rotationSpeed = 10f; // Velocidad de rotación hacia el oponente
 
 

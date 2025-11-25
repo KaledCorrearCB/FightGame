@@ -9,6 +9,7 @@ public class IdleBehaviour : StateMachineBehaviour
     {
       // PlayerAttack.instance.atacando = false;
         Debug.Log(PlayerAttack.instance.atacando);
+        FightingController.instance.moveSpeed = 5f;
     }
 
 
@@ -20,6 +21,8 @@ public class IdleBehaviour : StateMachineBehaviour
         {
             PlayerAttack.instance.anim.SetTrigger("Atack1");
             PlayerAttack.instance.damage = 10;
+            FightingController.instance.moveSpeed = 0f;
+
         }
     }
 

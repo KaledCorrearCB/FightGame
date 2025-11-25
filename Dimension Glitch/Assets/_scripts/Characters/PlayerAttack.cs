@@ -11,7 +11,12 @@ public class PlayerAttack : MonoBehaviour
     public string text;
     public int damage = 0;
     public float distanceDoge = 2f;
-    
+
+    [Header("Efectos y sonidos")]
+    public ParticleSystem efectoAtaque1;
+    public ParticleSystem efectoDoge;
+    public ParticleSystem efectoBlock;
+
     private void Awake()
     {
         if(instance == null)
@@ -45,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
         {
             anim.SetBool("isBlocking",true);
             Debug.Log("defendiendo");
+            FightingController.instance.moveSpeed = 0;
         }
 
         if (context.canceled)
@@ -64,5 +70,24 @@ public class PlayerAttack : MonoBehaviour
         }
 
 
+    }
+
+    public void AtackEfect()
+    {
+        if (efectoAtaque1 != null)
+        {
+            efectoAtaque1.Play();
+        }
+    }
+
+    public void DogeEfect()
+    {
+        efectoDoge.Play();
+    }
+
+
+    public void BlockEfect()
+    {
+        efectoBlock.Play();
     }
 }

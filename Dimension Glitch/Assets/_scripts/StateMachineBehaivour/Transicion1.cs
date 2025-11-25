@@ -18,6 +18,7 @@ public class Transicion1 : StateMachineBehaviour
             PlayerAttack.instance.anim.SetTrigger("Atack2");
             Debug.Log(PlayerAttack.instance.atacando);
             PlayerAttack.instance.damage -= 2;
+            FightingController.instance.moveSpeed = 0;
         }
 
     }
@@ -28,6 +29,7 @@ public class Transicion1 : StateMachineBehaviour
         PlayerAttack.instance.atacando = false;
         PlayerAttack.instance.damage = 0;
         PlayerAttack.instance.anim.ResetTrigger("Atack1");
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
