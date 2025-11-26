@@ -90,4 +90,9 @@ public class PlayerAttack : MonoBehaviour
     {
         efectoBlock.Play();
     }
+
+    public void BlockEfectStop()
+    {
+        efectoBlock.Stop();
+    }
 }

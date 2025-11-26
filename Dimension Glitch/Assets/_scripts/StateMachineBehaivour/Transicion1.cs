@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class Transicion1 : StateMachineBehaviour
 {
+    private PlayerAttack attack;
+    private FightingController fight;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // Obtener las referencias del jugador correcto
+        attack = animator.GetComponent<PlayerAttack>();
+        fight = animator.GetComponent<FightingController>();
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if (PlayerAttack.instance.atacando)
+        if (attack.atacando)
         {
-            PlayerAttack.instance.anim.SetTrigger("Atack2");
-            Debug.Log(PlayerAttack.instance.atacando);
-            PlayerAttack.instance.damage -= 2;
-            FightingController.instance.moveSpeed = 0;
+            attack.anim.SetTrigger("Atack2");
+            Debug.Log(attack.atacando);
+
+            attack.damage -= 2;
+            fight.moveSpeed = 0f;
         }
 
     }
@@ -26,11 +32,13 @@ public class Transicion1 : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerAttack.instance.atacando = false;
-        PlayerAttack.instance.damage = 0;
-        PlayerAttack.instance.anim.ResetTrigger("Atack1");
-        
-    }
+        attack.atacando = false;
+        attack.damage = 0;
+
+        attack.anim.ResetTrigger("Atack1");
+    
+
+}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
