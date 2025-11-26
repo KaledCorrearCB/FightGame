@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class IdleBehaviour : StateMachineBehaviour
 {
+
+
+    PlayerAttack attack;
+    FightingController fc;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-      // PlayerAttack.instance.atacando = false;
-        Debug.Log(PlayerAttack.instance.atacando);
-        FightingController.instance.moveSpeed = 5f;
+        // PlayerAttack.instance.atacando = false;
+        attack = animator.GetComponent<PlayerAttack>();
+        fc = animator.GetComponent<FightingController>();
+        
+        fc.moveSpeed = 5f;
+        attack.BlockEfectStop();
     }
 
 
@@ -17,20 +25,19 @@ public class IdleBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (PlayerAttack.instance.atacando)
+        if (attack.atacando)
         {
-            PlayerAttack.instance.anim.SetTrigger("Atack1");
-            PlayerAttack.instance.damage = 10;
-            FightingController.instance.moveSpeed = 0f;
-
+            attack.anim.SetTrigger("Atack1");
+            attack.damage = 10;
+            fc.moveSpeed = 0f;
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerAttack.instance.atacando = false;
-        
+        attack.atacando = false;
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

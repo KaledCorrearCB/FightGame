@@ -6,25 +6,38 @@ using UnityEngine;
 public class DogeBehaivour : StateMachineBehaviour
 
 {
-    private int Count = 0;
+    private int count = 0;
     private bool canMove = false;
+
+    private PlayerAttack attack;
+    private FightingController fight;
+    private MonoBehaviour runner;   // Para ejecutar la coroutine correctamente
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerAttack.instance.StartCoroutine(EsperarMedioSegundo());
-        PlayerAttack.instance.DogeEfect();
+        // Obtener referencias del jugador correcto
+        attack = animator.GetComponent<PlayerAttack>();
+        fight = animator.GetComponent<FightingController>();
+        runner = animator.GetComponent<MonoBehaviour>();
+
+        // Efecto de dodge
+        attack.DogeEfect();
+
+        // Iniciar coroutine (NO USAR singletons)
+        runner.StartCoroutine(EsperarMedioSegundo());
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (canMove && Count < 1)
+        if (canMove && count < 1)
         {
-            Vector3 dogeDirection = FightingController.instance.transform.forward * PlayerAttack.instance.distanceDoge;
-            FightingController.instance.controller.Move(dogeDirection);
-            Count++;
+            Vector3 dogeDir = fight.transform.forward * attack.distanceDoge;
+            fight.controller.Move(dogeDir);
+
+            count++;
         }
 
     }
@@ -32,9 +45,11 @@ public class DogeBehaivour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Count = 0;
-        PlayerAttack.instance.anim.ResetTrigger("Doge");
+        count = 0;
         canMove = false;
+
+        // Restaurar trigger (en el jugador correcto)
+        attack.anim.ResetTrigger("Doge");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -1417,6 +1417,7 @@ GameObject:
   - component: {fileID: 5866666020830776778}
   - component: {fileID: 5866666020830776777}
   - component: {fileID: 5866666020830776776}
+  - component: {fileID: 5866666020830776780}
   m_Layer: 0
   m_Name: Lobo para unity (1)
   m_TagString: Untagged
@@ -7232,7 +7233,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -27055,7 +27056,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.6207441, b: 0.20392156, a: 1}
-  m_Intensity: 37.596863
+  m_Intensity: 0
   m_Range: 8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -32392,6 +32393,33 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.77, z: 0}
+--- !u!54 &5866666020830776780
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148092669191}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &5867983556818049701
 Transform:
   m_ObjectHideFlags: 0
@@ -67127,6 +67155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8607421083181514170}
   - component: {fileID: 2419452292177602496}
+  - component: {fileID: 8951013602380064515}
   - component: {fileID: 8951013602380064514}
   - component: {fileID: 8951013602380064513}
   - component: {fileID: 8951013602380064517}
@@ -67169,6 +67198,22 @@ MonoBehaviour:
     m_ActionId: 3c307781-a815-47cd-88ae-b332ac42e605
     m_ActionName: Player/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f60fc997-4403-4709-aa40-b1f39c6a1fda
+    m_ActionName: Player/Ataques[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a435ad6c-4fea-4687-bae3-7ed797cb7560
+    m_ActionName: Player/Bloquear[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 61f661ad-c7d0-4600-a956-663e6a587a49
+    m_ActionName: Player/Esquivar[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: effc883b-ac73-46eb-8e0d-d87551cee761
+    m_ActionName: Player2/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8951013602380064514}
         m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
@@ -67182,19 +67227,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f60fc997-4403-4709-aa40-b1f39c6a1fda
-    m_ActionName: Player/Ataques[/Keyboard/j]
+    m_ActionId: 490eaca1-feb0-4ad3-84be-73e53431ef18
+    m_ActionName: Player2/Ataques[/Keyboard/j]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a435ad6c-4fea-4687-bae3-7ed797cb7560
-    m_ActionName: Player/Bloquear[/Keyboard/l]
+      m_Calls:
+      - m_Target: {fileID: 8951013602380064514}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Block
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7388c170-70a3-4574-bdf3-61a1564e886a
+    m_ActionName: Player2/Bloquear[/Keyboard/l]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 61f661ad-c7d0-4600-a956-663e6a587a49
-    m_ActionName: Player/Esquivar[/Keyboard/o]
+      m_Calls:
+      - m_Target: {fileID: 8951013602380064514}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DogeFront
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ecb0ff7a-559b-4455-882a-f735ea2d7b48
+    m_ActionName: Player2/Esquivar[/Keyboard/o]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Player2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &8951013602380064514
@@ -67217,6 +67286,33 @@ MonoBehaviour:
   efectoAtaque1: {fileID: 2454973561858818701}
   efectoDoge: {fileID: 8034304363015467082}
   efectoBlock: {fileID: 9092645185761166730}
+--- !u!54 &8951013602380064515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951013602380064512}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &8951013602380064516
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
         if (context.started && !atacando)
         {
             atacando = true;
-            Debug.Log(atacando);
+            Debug.Log("atacando");
         }
     }
 
@@ -89,5 +89,10 @@ public class PlayerAttack : MonoBehaviour
     public void BlockEfect()
     {
         efectoBlock.Play();
+    }
+
+    public void BlockEfectStop()
+    {
+        efectoBlock.Stop();
     }
 }

@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class BlockBehaviour : StateMachineBehaviour
 {
+
+
+    private FightingController fight;
+    private PlayerAttack attack;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // Obtener referencias del jugador correcto
+        fight = animator.GetComponent<FightingController>();
+        attack = animator.GetComponent<PlayerAttack>();
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(FightingController.instance.golpeado)
+        if (fight.golpeado)
         {
             animator.SetTrigger("Blocking");
-            FightingController.instance.moveSpeed = 0;
-            PlayerAttack.instance.BlockEfect();
-        }
 
+            fight.moveSpeed = 0f;
+
+            
+        }
+        attack.BlockEfect();
 
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+     attack.BlockEfectStop();
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
