@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
         if (context.started && !atacando)
         {
             atacando = true;
-            Debug.Log(atacando);
+            Debug.Log("atacando");
         }
     }
 

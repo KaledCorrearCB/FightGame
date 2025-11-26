@@ -45,61 +45,6 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "a352c504-1118-453e-95fa-968d389ef45b",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "50ab6278-ac14-483c-83a0-a54982d9bf1c",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "dc7b304d-8ff2-440b-817a-4c371e9e12d7",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "0394f7ce-3a87-4b05-a5d9-8049d9e87121",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "a77cafbb-3e03-4e18-b5de-62c710b3ebd7",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector",
                     "id": "b5ea0d31-114c-4595-aa2b-95d8dfd9bb1e",
                     "path": "2DVector",
                     "interactions": "",
@@ -155,44 +100,11 @@
                 },
                 {
                     "name": "",
-                    "id": "7a4b009e-078f-46e0-b31e-43854a5d6e52",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Ataques",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0da01db3-7565-4489-b591-8e9664c508bd",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Ataques",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bab9bd9b-0d37-407b-8e19-3be42eb35214",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ataques",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b09ea059-12e8-4a57-9452-13d22bc8c9f1",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Ataques",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -210,7 +122,128 @@
                 },
                 {
                     "name": "",
-                    "id": "155fd638-718f-498c-969d-13b1a0c72caa",
+                    "id": "b1bdd9f3-6fdb-4a70-933d-9821b33b7ee2",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Esquivar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "id": "34dc13de-3862-4780-b8d6-3610c50ff287",
+            "actions": [
+                {
+                    "name": "Movimiento",
+                    "type": "Value",
+                    "id": "effc883b-ac73-46eb-8e0d-d87551cee761",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Ataques",
+                    "type": "Button",
+                    "id": "490eaca1-feb0-4ad3-84be-73e53431ef18",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bloquear",
+                    "type": "Button",
+                    "id": "7388c170-70a3-4574-bdf3-61a1564e886a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Esquivar",
+                    "type": "Button",
+                    "id": "ecb0ff7a-559b-4455-882a-f735ea2d7b48",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "f3dd1ea0-25a7-466e-b2ad-971f8c95f98e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimiento",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1bb7ce15-33c4-4c3b-916e-4ce2d1aa1253",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Movimiento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "fb6e876a-dbb2-441e-b6da-66dd6021dd75",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Movimiento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e77f1aa3-0bae-4b78-a710-8e37db462a6c",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Movimiento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c1716648-96e4-4dd2-8f1a-a4f71f831dc1",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Movimiento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "64faf6b6-74d3-4acd-9b9a-9957e634e638",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Ataques",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01f9c7c6-9b74-44cc-9138-e118493edc8d",
                     "path": "<Keyboard>/l",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
@@ -221,51 +254,7 @@
                 },
                 {
                     "name": "",
-                    "id": "cc1e97d9-b1f8-4668-99a7-bf8c3f4cba6f",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bloquear",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb57f4ff-82db-4e34-9fe1-9a4392d22b60",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bloquear",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b1bdd9f3-6fdb-4a70-933d-9821b33b7ee2",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Esquivar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c8e724f7-18f7-4b33-a9c1-2662e5d1e3a1",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Esquivar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a53fb195-744a-4f3f-9287-ef6edda439c4",
+                    "id": "edccd3eb-e0f8-4c8d-97b7-634e5484888c",
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
