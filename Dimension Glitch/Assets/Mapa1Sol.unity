@@ -32260,7 +32260,7 @@ Animator:
   m_GameObject: {fileID: 919132148092669191}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 045b03ac1ad99a24e889aa33024438bc, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1d6d2a955c7bbcb4e87c407553bb314e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53422fa7db104d740a573710b579119a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -32338,13 +32338,53 @@ MonoBehaviour:
     m_ActionId: f60fc997-4403-4709-aa40-b1f39c6a1fda
     m_ActionName: Player/Ataques[/Keyboard/j]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866666020830776776}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Block
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a435ad6c-4fea-4687-bae3-7ed797cb7560
     m_ActionName: Player/Bloquear[/Keyboard/l]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866666020830776776}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DogeFront
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 61f661ad-c7d0-4600-a956-663e6a587a49
     m_ActionName: Player/Esquivar[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: effc883b-ac73-46eb-8e0d-d87551cee761
+    m_ActionName: Player2/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 490eaca1-feb0-4ad3-84be-73e53431ef18
+    m_ActionName: Player2/Ataques[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7388c170-70a3-4574-bdf3-61a1564e886a
+    m_ActionName: Player2/Bloquear[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ecb0ff7a-559b-4455-882a-f735ea2d7b48
+    m_ActionName: Player2/Esquivar[/Keyboard/o]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
