@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     public string text;
     public int damage = 0;
     public float distanceDoge = 2f;
+    public Hitbox hitboxAtack1;
+    public Hitbox hitboxAtack2;
 
     [Header("Efectos y sonidos")]
     public ParticleSystem efectoAtaque1;
@@ -28,7 +30,9 @@ public class PlayerAttack : MonoBehaviour
     public void Start()
     {
         anim = GetComponent<Animator>();
-        
+        hitboxAtack1.owner =gameObject;
+        hitboxAtack2.owner = gameObject;
+
     }
     public void Update()
     {
@@ -95,4 +99,26 @@ public class PlayerAttack : MonoBehaviour
     {
         efectoBlock.Stop();
     }
+
+
+    public void ActivateHitbox1()
+    {
+        hitboxAtack1.Activate();
+    }
+
+    public void DeactivateHitbox1()
+    {
+        hitboxAtack1.Deactivate();
+    }
+
+    public void ActivateHitbox2()
+    {
+        hitboxAtack2.Activate();
+    }
+
+    public void DeactivateHitbox2()
+    {
+        hitboxAtack2.Deactivate();
+    }
+
 }
