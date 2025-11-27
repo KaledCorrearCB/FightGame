@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Vikinga
   m_EditorClassIdentifier: 
   characterName: Freya
+  bigSprite: {fileID: 21300000, guid: 14918c5ddc2b5f047abb46bbeb88a9b2, type: 3}
   portrait: {fileID: 21300000, guid: eaea6225a2d178347b1f9af6a16f695f, type: 3}
   prefab: {fileID: 4802171612908787746, guid: 84b4a3556e640dc4ab49668e1b9c4794, type: 3}
   animator: {fileID: 9100000, guid: 630d19a91096e2548b9a715a0e39f053, type: 2}
