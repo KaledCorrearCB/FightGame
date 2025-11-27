@@ -64,6 +64,7 @@ public class PlayerAttack : MonoBehaviour
         {
             isBlocking= false; 
             anim.SetBool("isBlocking", false);
+            anim.ResetTrigger("Blocking");
         }
 
     }

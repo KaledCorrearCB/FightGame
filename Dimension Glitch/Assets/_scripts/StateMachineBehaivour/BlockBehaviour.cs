@@ -20,13 +20,12 @@ public class BlockBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        fight.moveSpeed = 0f;
         if (fight.golpeado)
         {
             animator.SetTrigger("Blocking");
 
-            fight.moveSpeed = 0f;
-
-            
+           
         }
         attack.BlockEfect();
 
@@ -36,6 +35,7 @@ public class BlockBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
      attack.BlockEfectStop();
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
