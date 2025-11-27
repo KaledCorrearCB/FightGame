@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHP = 100;
     public int HP;
-
+    public int playerID;
     PlayerAttack pa;
 
 
@@ -43,12 +43,21 @@ public class CharacterStats : MonoBehaviour
             FightingController.instance.golpeado = false;
         }
         Debug.Log(gameObject.name + " recibió " + amount + " daño. HP = " + HP);
+
+        if (HP <= 0)
+        {
+            HP = 0;
+            Die();
+        }
+
     }
 
     private void Die()
     {
         Debug.Log(gameObject.name + " murió.");
         GetComponent<Animator>().SetTrigger("KO");
+
+        GameManager.Instance.PlayerDied(playerID);
     }
 
 }

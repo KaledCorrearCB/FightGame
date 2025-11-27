@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mapa1Sol.unity
     guid: b3b8fb7a74f95da49abab8100f54520c
+  - enabled: 1
+    path: Assets/Scenes/GanarLobo.unity
+    guid: 8930126a845b19846974a1b24c729e74
+  - enabled: 1
+    path: Assets/Scenes/GanarZorra.unity
+    guid: 670bc0b19a6dfc14aab4e495a25547c0
   m_configObjects: {}
