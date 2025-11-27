@@ -359,13 +359,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319895561}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.73106307, y: -0.008462132, z: 0.039618094, w: 0.68110615}
-  m_LocalPosition: {x: 1.9, y: 56, z: -40.4}
-  m_LocalScale: {x: 13.924699, y: 13.924699, z: 13.924699}
+  m_LocalRotation: {x: 0.70962787, y: -0.008305252, z: 0.038861334, w: 0.70345515}
+  m_LocalPosition: {x: -6.8, y: 56, z: -30.1}
+  m_LocalScale: {x: 18.53656, y: 13.924699, z: 13.924699}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659189072}
-  m_LocalEulerAnglesHint: {x: 85.228, y: 146.1, z: 150}
+  m_LocalEulerAnglesHint: {x: 87.474, y: 99.509, z: 103.333}
 --- !u!64 &319895563
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -811,7 +811,7 @@ Transform:
   m_GameObject: {fileID: 460684910}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 3.3}
+  m_LocalPosition: {x: 0, y: -7.93, z: 3.3}
   m_LocalScale: {x: 3.9406, y: 1, z: 6.7395}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66801,6 +66801,7 @@ GameObject:
   - component: {fileID: 5680519943643678725}
   - component: {fileID: 3010172806577858540}
   - component: {fileID: 8544783547745939441}
+  - component: {fileID: 8544783547745939442}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
@@ -71718,6 +71719,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8544783547745939442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416272008734542297}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: 837362eae0155e84589d97ad8d7427ee, type: 3}
 --- !u!4 &8607421083181514170
 Transform:
   m_ObjectHideFlags: 0

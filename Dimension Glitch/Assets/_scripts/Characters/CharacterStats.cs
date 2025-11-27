@@ -18,7 +18,6 @@ public class CharacterStats : MonoBehaviour
 
     public void ReceiveDamage(int amount)
     {
-        HP -= amount;
         
         bool blocking = pa != null && pa.isBlocking;
         int finalDamage = amount;
