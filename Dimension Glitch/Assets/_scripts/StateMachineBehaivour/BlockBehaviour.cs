@@ -23,7 +23,7 @@ public class BlockBehaviour : StateMachineBehaviour
         fight.moveSpeed = 0f;
         if (fight.golpeado)
         {
-            animator.SetTrigger("Blocking");
+            
 
            
         }

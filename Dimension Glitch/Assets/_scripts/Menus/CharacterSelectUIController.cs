@@ -34,13 +34,13 @@ public class CharacterSelectUIController : MonoBehaviour
         if (isPlayer1Selecting)
         {
             leftDisplay.sprite = data.bigSprite;
-            PlayerPrefs.SetString("P1Character", data.name);
+            PlayerPrefs.SetString("P1Character", data.characterName);
             isPlayer1Selecting = false;
         }
         else
         {
             rightDisplay.sprite = data.bigSprite;
-            PlayerPrefs.SetString("P2Character", data.name);
+            PlayerPrefs.SetString("P2Character", data.characterName);
         }
     }
 }
