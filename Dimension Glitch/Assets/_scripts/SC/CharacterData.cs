@@ -4,6 +4,7 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public string characterName;
+    public Sprite bigSprite;        //imagen para partegrande
     public Sprite portrait;         // Imagen para el selector
     public GameObject prefab;       // Prefab del personaje
     public RuntimeAnimatorController animator; // Opcional
