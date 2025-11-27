@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,32 +7,49 @@ public class CharacterStats : MonoBehaviour
     public int maxHP = 100;
     public int HP;
 
+    PlayerAttack pa;
+
+
     private void Start()
     {
         HP = maxHP;
+        pa = GetComponent<PlayerAttack>();
     }
 
     public void ReceiveDamage(int amount)
     {
         HP -= amount;
+        
+        bool blocking = pa != null && pa.isBlocking;
+        int finalDamage = amount;
 
-        Debug.Log(gameObject.name + " recibió " + amount + " daño. HP = " + HP);
-
-        if (HP <= 0)
+        // Si estÃ¡ bloqueando â†’ reducir daÃ±o
+        if (blocking)
         {
-            HP = 0;
-            Die();
+            finalDamage = Mathf.FloorToInt(amount * 0.3f); // 70% reducciÃ³n
+            Debug.Log(" Bloqueo! DaÃ±o reducido de " + amount + " a " + finalDamage);
         }
 
-        // activar animación de recibir golpe
-        GetComponent<Animator>().SetTrigger("Hit");
-        FightingController.instance.golpeado = true;
-        Debug.Log(gameObject.name + " recibió " + amount + " daño. HP = " + HP);
+        HP -= finalDamage;
+
+        // activar animaciÃ³n de recibir golpe
+        if (!blocking)
+        {
+            GetComponent<Animator>().SetTrigger("Hit");
+            FightingController.instance.golpeado = true;
+        }
+        else
+        {
+            // si estÃ¡ bloqueando, no entra golpeado
+            FightingController.instance.golpeado = false;
+        }
+        Debug.Log(gameObject.name + " recibiÃ³ " + amount + " daÃ±o. HP = " + HP);
     }
 
     private void Die()
     {
-        Debug.Log(gameObject.name + " murió.");
+        Debug.Log(gameObject.name + " muriÃ³.");
         GetComponent<Animator>().SetTrigger("KO");
     }
+
 }
