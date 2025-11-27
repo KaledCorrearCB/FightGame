@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour
     public Hitbox hitboxAtack1;
     public Hitbox hitboxAtack2;
 
+    public bool isBlocking = false;
+
     [Header("Efectos y sonidos")]
     public ParticleSystem efectoAtaque1;
     public ParticleSystem efectoDoge;
@@ -52,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (context.started)
         {
+            isBlocking = true;
             anim.SetBool("isBlocking",true);
             Debug.Log("defendiendo");
             FightingController.instance.moveSpeed = 0;
@@ -59,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (context.canceled)
         {
+            isBlocking= false; 
             anim.SetBool("isBlocking", false);
         }
 
