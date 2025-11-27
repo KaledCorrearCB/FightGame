@@ -10,6 +10,7 @@ public class FightingController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 10f; // Velocidad de rotación hacia el oponente
 
 
+
     public float smoothBlend = 0.1f;
     public CharacterController controller;
     private Vector2 moveInput;
@@ -20,7 +21,9 @@ public class FightingController : MonoBehaviour
     // Hacemos que sea un singleton para poder llamarlo desde otro lugar
     public static FightingController instance;
     public bool golpeado;
-
+    [Header("Gravedad")]
+    public float gravity = -9.8f;
+    private float verticalVelocity = 0f;
     private void Awake()
     {
         if (instance == null)
@@ -75,7 +78,7 @@ public class FightingController : MonoBehaviour
         // Convertimos el input 2D (x,y) a dirección 3D (x,z)
         Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y);
 
-        // Mantener movimiento relativo a la cámara (opcional)
+        // Movimiento relativo a la cámara
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
@@ -84,20 +87,32 @@ public class FightingController : MonoBehaviour
 
         Vector3 move = (right * direction.x + forward * direction.z).normalized;
 
-        // Mover al personaje
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        // --- APLICAR GRAVEDAD ---
+        if (controller.isGrounded)
+        {
+            // Si está en el suelo, asegúrate de que la velocidad vertical sea 0
+            verticalVelocity = -1f;   // Un pequeño empuje hacia abajo para mantenerlo pegado
+        }
+        else
+        {
+            // Caída 
+            verticalVelocity += gravity * Time.deltaTime;
+        }
 
-        // Rotar hacia la dirección de movimiento (solo si hay movimiento)
+        // Crear vector final de movimiento
+        Vector3 finalMovement = (move * moveSpeed) + new Vector3(0, verticalVelocity, 0);
+
+        // Mover al personaje
+        controller.Move(finalMovement * Time.deltaTime);
+
+        // Rotar hacia la dirección de movimiento
         if (move != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(move);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-
         }
 
         anim.SetFloat("Blend", moveInput.magnitude, smoothBlend, Time.deltaTime);
-       // anim.SetBool("Walking", move.magnitude > 0.1f);
 
     }
 

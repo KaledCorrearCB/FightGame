@@ -12,6 +12,7 @@ public class Hitbox : MonoBehaviour
     private bool active = false;
     [HideInInspector] public GameObject owner;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (!active) return;
